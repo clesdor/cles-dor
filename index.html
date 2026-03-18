@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -211,21 +212,6 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--cream);min
 .end-kv{font-size:24px;font-weight:600;color:var(--accent)}
 .end-kl{font-size:10px;color:var(--cream3);text-transform:uppercase;margin-top:3px}
 .end-advice{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.125rem;text-align:left;margin-bottom:1.25rem}
-.keys-display{display:flex;justify-content:center;gap:12px;margin:1.5rem 0}
-.key-icon{font-size:32px;transition:all 0.5s;filter:grayscale(1);opacity:0.3}
-.key-icon.earned{filter:grayscale(0);opacity:1;animation:keyPop 0.6s ease forwards}
-@keyframes keyPop{0%{transform:scale(0.5) rotate(-20deg);opacity:0}60%{transform:scale(1.3) rotate(5deg)}100%{transform:scale(1) rotate(0deg);opacity:1}}
-.keys-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,4vw,2.2rem);margin-bottom:0.5rem}
-.champion-banner{background:linear-gradient(135deg,rgba(212,168,67,0.2),rgba(234,200,96,0.1));border:2px solid var(--accent);border-radius:var(--r2);padding:1.5rem;margin-bottom:1.25rem;text-align:center;animation:shimmer 3s ease infinite}
-@keyframes shimmer{0%,100%{box-shadow:0 0 20px rgba(212,168,67,0.2)}50%{box-shadow:0 0 40px rgba(212,168,67,0.5)}}
-.champion-icon{font-size:64px;margin-bottom:0.5rem;display:block}
-.champion-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--accent2);margin-bottom:0.5rem}
-.champion-subtitle{font-size:13px;color:var(--cream2);line-height:1.6}
-.share-btn{background:var(--accent);color:var(--bg);border:none;border-radius:100px;padding:10px 24px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;margin:0.5rem 0.25rem;transition:all 0.15s}
-.share-btn:hover{background:var(--accent2);transform:translateY(-1px)}
-.serious-cta{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r2);padding:1.25rem;margin-bottom:1.25rem;text-align:center}
-.serious-cta-title{font-size:14px;font-weight:600;color:var(--cream);margin-bottom:6px}
-.serious-cta-sub{font-size:12px;color:var(--cream3);margin-bottom:12px;line-height:1.6}
 .eat{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:8px;font-weight:500}
 .eai{font-size:12px;color:var(--cream2);line-height:1.6;margin-bottom:5px;padding-left:13px;position:relative}
 .eai::before{content:'→';position:absolute;left:0;color:var(--accent3)}
@@ -245,137 +231,137 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--cream);min
 .modal-stat-lbl{font-size:10px;color:var(--cream3);text-transform:uppercase;margin-top:2px}
 .modal-desc{font-size:13px;color:var(--cream2);line-height:1.7}
 @media(max-width:720px){
-  .onboard-panel{grid-template-columns:1fr}
-  .onboard-left{border-radius:var(--r3) var(--r3) 0 0;border-right:1px solid var(--border);border-bottom:none;padding:2rem 1.75rem}
-  .onboard-right{border-radius:0 0 var(--r3) var(--r3);border-left:1px solid var(--border);border-top:none;padding:2rem 1.75rem}
-  .sidebar{display:none}
-  .topbar-kpis .kpi-chip:nth-child(n+5){display:none}
-  .theme-cards{flex-direction:column;align-items:center}
+.onboard-panel{grid-template-columns:1fr}
+.onboard-left{border-radius:var(--r3) var(--r3) 0 0;border-right:1px solid var(--border);border-bottom:none;padding:2rem 1.75rem}
+.onboard-right{border-radius:0 0 var(--r3) var(--r3);border-left:1px solid var(--border);border-top:none;padding:2rem 1.75rem}
+.sidebar{display:none}
+.topbar-kpis .kpi-chip:nth-child(n+5){display:none}
+.theme-cards{flex-direction:column;align-items:center}
 }
 </style>
 </head>
 <body data-theme="gold">
 
 <div id="screen-theme" class="screen active">
-  <div class="theme-title">Clés d'Or</div>
-  <div class="theme-sub">Choisissez votre ambiance de jeu</div>
-  <div class="theme-cards">
-    <div class="theme-card t-gold" onclick="selectTheme('gold')">
-      <div class="tc-icon">🏆</div>
-      <div class="tc-name">Or Classique</div>
-      <div class="tc-desc">Élégance sombre, tons or et crème.</div>
-      <div class="tc-dots"><div class="tc-dot" style="background:#1C1A14"></div><div class="tc-dot" style="background:#D4A843"></div><div class="tc-dot" style="background:#F4EFE4"></div></div>
-    </div>
-    <div class="theme-card t-ocean" onclick="selectTheme('ocean')">
-      <div class="tc-icon">🌊</div>
-      <div class="tc-name">Bleu Océan</div>
-      <div class="tc-desc">Profondeurs marines, lumière azur.</div>
-      <div class="tc-dots"><div class="tc-dot" style="background:#0D1820"></div><div class="tc-dot" style="background:#38A8D8"></div><div class="tc-dot" style="background:#E8F4F8"></div></div>
-    </div>
-    <div class="theme-card t-forest" onclick="selectTheme('forest')">
-      <div class="tc-icon">🌿</div>
-      <div class="tc-name">Forêt Verte</div>
-      <div class="tc-desc">Nature et sérénité, tons boisés.</div>
-      <div class="tc-dots"><div class="tc-dot" style="background:#101810"></div><div class="tc-dot" style="background:#60B840"></div><div class="tc-dot" style="background:#E8F4E0"></div></div>
-    </div>
-  </div>
+<div class="theme-title">Clés d'Or</div>
+<div class="theme-sub">Choisissez votre ambiance de jeu</div>
+<div class="theme-cards">
+<div class="theme-card t-gold" onclick="selectTheme('gold')">
+<div class="tc-icon">🏆</div>
+<div class="tc-name">Or Classique</div>
+<div class="tc-desc">Élégance sombre, tons or et crème.</div>
+<div class="tc-dots"><div class="tc-dot" style="background:#1C1A14"></div><div class="tc-dot" style="background:#D4A843"></div><div class="tc-dot" style="background:#F4EFE4"></div></div>
+</div>
+<div class="theme-card t-ocean" onclick="selectTheme('ocean')">
+<div class="tc-icon">🌊</div>
+<div class="tc-name">Bleu Océan</div>
+<div class="tc-desc">Profondeurs marines, lumière azur.</div>
+<div class="tc-dots"><div class="tc-dot" style="background:#0D1820"></div><div class="tc-dot" style="background:#38A8D8"></div><div class="tc-dot" style="background:#E8F4F8"></div></div>
+</div>
+<div class="theme-card t-forest" onclick="selectTheme('forest')">
+<div class="tc-icon">🌿</div>
+<div class="tc-name">Forêt Verte</div>
+<div class="tc-desc">Nature et sérénité, tons boisés.</div>
+<div class="tc-dots"><div class="tc-dot" style="background:#101810"></div><div class="tc-dot" style="background:#60B840"></div><div class="tc-dot" style="background:#E8F4E0"></div></div>
+</div>
+</div>
 </div>
 
 <div id="screen-onboard" class="screen">
-  <div class="onboard-bg"></div>
-  <div class="onboard-panel">
-    <div class="onboard-left">
-      <div>
-        <div class="brand-kicker">Simulation de gestion</div>
-        <div class="brand-name">Clés<br>d'Or</div>
-        <div class="brand-tagline">Le jeu qui vous apprend à gérer une conciergerie comme un pro.</div><div style="display:inline-flex;align-items:center;gap:6px;background:var(--accent-bg);border:1px solid var(--accent3);border-radius:100px;padding:4px 12px;font-size:12px;color:var(--accent2);margin-bottom:1.5rem">⏱️ Durée estimée : 35 à 50 minutes</div>
-        <div class="brand-features">
-          <div class="brand-feat"><span class="feat-dot"></span>60 scénarios × 12 mois</div>
-          <div class="brand-feat"><span class="feat-dot"></span>Questions différentes à chaque partie</div>
-          <div class="brand-feat"><span class="feat-dot"></span>Parc immobilier virtuel à développer</div>
-          <div class="brand-feat"><span class="feat-dot"></span>Espace acquisition avec photos</div>
-        </div>
-      </div>
-      <div class="brand-stats">
-        <div><div class="bstat-val">60</div><div class="bstat-lbl">Défis</div></div>
-        <div><div class="bstat-val">10</div><div class="bstat-lbl">Apparts</div></div>
-        <div><div class="bstat-val">∞</div><div class="bstat-lbl">Parties</div></div>
-      </div>
-    </div>
-    <div class="onboard-right">
-      <div class="step-dots" id="step-dots">
-        <div class="step-dot active"></div><div class="step-dot"></div><div class="step-dot"></div>
-      </div>
-      <div class="form-step active" id="step1">
-        <div class="form-title">Créez votre profil</div>
-        <div class="form-sub">Vous allez gérer votre propre conciergerie.</div>
-        <div class="field-group"><label class="field-label">Votre prénom</label><input class="field-input" id="inp-name" type="text" placeholder="Ex : Sophie" maxlength="24" oninput="checkStep1()"></div>
-        <div class="field-group"><label class="field-label">Nom de votre conciergerie</label><input class="field-input" id="inp-agency" type="text" placeholder="Ex : Appart'Élite, HomeKey…" maxlength="32" oninput="checkStep1()"></div>
-        <button class="btn-primary" id="btn-step1" disabled onclick="goStep(2)">Continuer →</button>
-      </div>
-      <div class="form-step" id="step2">
-        <div class="form-title">Votre marché</div>
-        <div class="form-sub">Chaque ville a ses défis spécifiques.</div>
-        <div class="city-grid">
-          <button class="city-btn" onclick="selectCity('Paris','🗼')"><div class="city-btn-name">🗼 Paris</div><div class="city-btn-meta">118€/nuit · TO 76% · Difficulté élevée</div></button>
-          <button class="city-btn" onclick="selectCity('Lyon','🏛️')"><div class="city-btn-name">🏛️ Lyon</div><div class="city-btn-meta">85€/nuit · TO 68% · Difficulté modérée</div></button>
-          <button class="city-btn" onclick="selectCity('Marseille','☀️')"><div class="city-btn-name">☀️ Marseille</div><div class="city-btn-meta">78€/nuit · TO 58-88% · Très saisonnière</div></button>
-          <button class="city-btn" onclick="selectCity('Bordeaux','🍷')"><div class="city-btn-name">🍷 Bordeaux</div><div class="city-btn-meta">82€/nuit · TO 66% · Oenotourisme</div></button>
-          <button class="city-btn" onclick="selectCity('Nice','🌊')"><div class="city-btn-name">🌊 Nice</div><div class="city-btn-meta">110€/nuit · TO 62-90% · Luxe international</div></button>
-          <button class="city-btn city-other" onclick="document.getElementById('city-wrap').style.display='block';this.style.display='none'"><div class="city-btn-name">📍 Autre ville…</div></button>
-        </div>
-        <div id="city-wrap" style="display:none;margin-bottom:1rem"><input class="field-input" id="inp-city" type="text" placeholder="Votre ville" oninput="selectCity(this.value||'Ma ville','📍')"></div>
-        <button class="btn-primary" id="btn-step2" disabled onclick="goStep(3)">Continuer →</button>
-        <button class="btn-secondary" onclick="goStep(1)">← Retour</button>
-      </div>
-      <div class="form-step" id="step3">
-        <div class="form-title">Votre avatar</div>
-        <div class="form-sub">Choisissez comment vous apparaîtrez.</div>
-        <div class="avatar-grid">
-          <button class="av-btn" onclick="selectAv('👩‍💼',this)">👩‍💼</button>
-          <button class="av-btn" onclick="selectAv('👨‍💼',this)">👨‍💼</button>
-          <button class="av-btn" onclick="selectAv('🧑‍🏫',this)">🧑‍🏫</button>
-          <button class="av-btn" onclick="selectAv('👩‍🔧',this)">👩‍🔧</button>
-          <button class="av-btn" onclick="selectAv('🧑‍💻',this)">🧑‍💻</button>
-          <button class="av-btn selected" onclick="selectAv('🏆',this)">🏆</button>
-        </div>
-        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:1.25rem;display:flex;align-items:center;gap:12px">
-          <span id="recap-av" style="font-size:28px">🏆</span>
-          <div><div style="font-size:13px;font-weight:500;color:var(--cream)" id="recap-name">—</div><div style="font-size:11px;color:var(--cream3)" id="recap-agency">—</div><div style="font-size:11px;color:var(--accent)" id="recap-city">—</div></div>
-        </div>
-        <div style="background:var(--accent-bg);border:1px solid var(--accent3);border-radius:var(--r);padding:9px 12px;margin-bottom:1rem;font-size:12px;color:var(--accent2);text-align:center">⏱️ Durée estimée : <strong>35 à 50 minutes</strong> · 60 défis · 12 mois</div><button class="btn-primary" onclick="startGame()">Lancer ma conciergerie 🔑</button>
-        <button class="btn-secondary" onclick="goStep(2)">← Retour</button>
-      </div>
-    </div>
-  </div>
+<div class="onboard-bg"></div>
+<div class="onboard-panel">
+<div class="onboard-left">
+<div>
+<div class="brand-kicker">Simulation de gestion</div>
+<div class="brand-name">Clés<br>d'Or</div>
+<div class="brand-tagline">Le jeu qui vous apprend à gérer une conciergerie comme un pro.</div><div style="display:inline-flex;align-items:center;gap:6px;background:var(--accent-bg);border:1px solid var(--accent3);border-radius:100px;padding:4px 12px;font-size:12px;color:var(--accent2);margin-bottom:1.5rem">⏱️ Durée estimée : 35 à 50 minutes</div>
+<div class="brand-features">
+<div class="brand-feat"><span class="feat-dot"></span>60 scénarios × 12 mois</div>
+<div class="brand-feat"><span class="feat-dot"></span>Questions différentes à chaque partie</div>
+<div class="brand-feat"><span class="feat-dot"></span>Parc immobilier virtuel à développer</div>
+<div class="brand-feat"><span class="feat-dot"></span>Espace acquisition avec photos</div>
+</div>
+</div>
+<div class="brand-stats">
+<div><div class="bstat-val">60</div><div class="bstat-lbl">Défis</div></div>
+<div><div class="bstat-val">10</div><div class="bstat-lbl">Apparts</div></div>
+<div><div class="bstat-val">∞</div><div class="bstat-lbl">Parties</div></div>
+</div>
+</div>
+<div class="onboard-right">
+<div class="step-dots" id="step-dots">
+<div class="step-dot active"></div><div class="step-dot"></div><div class="step-dot"></div>
+</div>
+<div class="form-step active" id="step1">
+<div class="form-title">Créez votre profil</div>
+<div class="form-sub">Vous allez gérer votre propre conciergerie.</div>
+<div class="field-group"><label class="field-label">Votre prénom</label><input class="field-input" id="inp-name" type="text" placeholder="Ex : Sophie" maxlength="24" oninput="checkStep1()"></div>
+<div class="field-group"><label class="field-label">Nom de votre conciergerie</label><input class="field-input" id="inp-agency" type="text" placeholder="Ex : Appart'Élite, HomeKey…" maxlength="32" oninput="checkStep1()"></div>
+<button class="btn-primary" id="btn-step1" disabled onclick="goStep(2)">Continuer →</button>
+</div>
+<div class="form-step" id="step2">
+<div class="form-title">Votre marché</div>
+<div class="form-sub">Chaque ville a ses défis spécifiques.</div>
+<div class="city-grid">
+<button class="city-btn" onclick="selectCity('Paris','🗼')"><div class="city-btn-name">🗼 Paris</div><div class="city-btn-meta">Premium · Forte concurrence</div></button>
+<button class="city-btn" onclick="selectCity('Lyon','🏛️')"><div class="city-btn-name">🏛️ Lyon</div><div class="city-btn-meta">Dynamique · Clientèle pro</div></button>
+<button class="city-btn" onclick="selectCity('Marseille','☀️')"><div class="city-btn-name">☀️ Marseille</div><div class="city-btn-meta">Saisonnalité · Tourisme</div></button>
+<button class="city-btn" onclick="selectCity('Bordeaux','🍷')"><div class="city-btn-name">🍷 Bordeaux</div><div class="city-btn-meta">Oenotourisme · Croissance</div></button>
+<button class="city-btn" onclick="selectCity('Nice','🌊')"><div class="city-btn-name">🌊 Nice</div><div class="city-btn-meta">Luxe · International</div></button>
+<button class="city-btn city-other" onclick="document.getElementById('city-wrap').style.display='block';this.style.display='none'"><div class="city-btn-name">📍 Autre ville…</div></button>
+</div>
+<div id="city-wrap" style="display:none;margin-bottom:1rem"><input class="field-input" id="inp-city" type="text" placeholder="Votre ville" oninput="selectCity(this.value||'Ma ville','📍')"></div>
+<button class="btn-primary" id="btn-step2" disabled onclick="goStep(3)">Continuer →</button>
+<button class="btn-secondary" onclick="goStep(1)">← Retour</button>
+</div>
+<div class="form-step" id="step3">
+<div class="form-title">Votre avatar</div>
+<div class="form-sub">Choisissez comment vous apparaîtrez.</div>
+<div class="avatar-grid">
+<button class="av-btn" onclick="selectAv('👩‍💼',this)">👩‍💼</button>
+<button class="av-btn" onclick="selectAv('👨‍💼',this)">👨‍💼</button>
+<button class="av-btn" onclick="selectAv('🧑‍🏫',this)">🧑‍🏫</button>
+<button class="av-btn" onclick="selectAv('👩‍🔧',this)">👩‍🔧</button>
+<button class="av-btn" onclick="selectAv('🧑‍💻',this)">🧑‍💻</button>
+<button class="av-btn selected" onclick="selectAv('🏆',this)">🏆</button>
+</div>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:1.25rem;display:flex;align-items:center;gap:12px">
+<span id="recap-av" style="font-size:28px">🏆</span>
+<div><div style="font-size:13px;font-weight:500;color:var(--cream)" id="recap-name">—</div><div style="font-size:11px;color:var(--cream3)" id="recap-agency">—</div><div style="font-size:11px;color:var(--accent)" id="recap-city">—</div></div>
+</div>
+<div style="background:var(--accent-bg);border:1px solid var(--accent3);border-radius:var(--r);padding:9px 12px;margin-bottom:1rem;font-size:12px;color:var(--accent2);text-align:center">⏱️ Durée estimée : <strong>35 à 50 minutes</strong> · 60 défis · 12 mois</div><button class="btn-primary" onclick="startGame()">Lancer ma conciergerie 🔑</button>
+<button class="btn-secondary" onclick="goStep(2)">← Retour</button>
+</div>
+</div>
+</div>
 </div>
 
 <div id="screen-game" class="screen">
-  <div class="topbar">
-    <div class="topbar-left">
-      <div class="game-brand">Clés d'Or</div>
-      <div class="player-chip"><div class="player-av" id="tb-av">🏆</div><div><div class="player-name" id="tb-name">—</div><div class="player-city" id="tb-city">—</div></div></div>
-    </div>
-    <div class="topbar-kpis" id="topbar-kpis"></div>
-    <div id="topbar-turn" style="font-size:12px;color:var(--cream3);white-space:nowrap"></div>
-  </div>
-  <div class="game-nav">
-    <button class="nav-tab active" onclick="switchTab('play')">🎮 Jouer</button>
-    <button class="nav-tab" onclick="switchTab('apts')">🏠 Mes Appartements</button>
-    <button class="nav-tab" onclick="switchTab('acq')">🔍 Acquisitions</button>
-  </div>
-  <div class="game-body">
-    <div class="sidebar">
-      <div class="sidebar-section"><div class="sidebar-title">Portefeuille</div><div id="apt-list"></div></div>
-      <div class="sidebar-section"><div class="sidebar-title">Équipe</div><div id="staff-list"></div></div>
-      <div class="sidebar-section"><div class="sidebar-title">Indicateurs</div><div id="indicators"></div></div>
-    </div>
-    <div class="main-content" id="main-content">
-      <div id="tab-play"></div>
-      <div id="tab-apts" class="apts-view"></div>
-      <div id="tab-acq" class="acq-view"></div>
-    </div>
-  </div>
+<div class="topbar">
+<div class="topbar-left">
+<div class="game-brand">Clés d'Or</div>
+<div class="player-chip"><div class="player-av" id="tb-av">🏆</div><div><div class="player-name" id="tb-name">—</div><div class="player-city" id="tb-city">—</div></div></div>
+</div>
+<div class="topbar-kpis" id="topbar-kpis"></div>
+<div id="topbar-turn" style="font-size:12px;color:var(--cream3);white-space:nowrap"></div>
+</div>
+<div class="game-nav">
+<button class="nav-tab active" onclick="switchTab('play')">🎮 Jouer</button>
+<button class="nav-tab" onclick="switchTab('apts')">🏠 Mes Appartements</button>
+<button class="nav-tab" onclick="switchTab('acq')">🔍 Acquisitions</button>
+</div>
+<div class="game-body">
+<div class="sidebar">
+<div class="sidebar-section"><div class="sidebar-title">Portefeuille</div><div id="apt-list"></div></div>
+<div class="sidebar-section"><div class="sidebar-title">Équipe</div><div id="staff-list"></div></div>
+<div class="sidebar-section"><div class="sidebar-title">Indicateurs</div><div id="indicators"></div></div>
+</div>
+<div class="main-content" id="main-content">
+<div id="tab-play"></div>
+<div id="tab-apts" class="apts-view"></div>
+<div id="tab-acq" class="acq-view"></div>
+</div>
+</div>
 </div>
 
 <div id="screen-end" class="screen"></div>
@@ -389,40 +375,40 @@ let currentTab='play';
 const MONTHS=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
 
 const FACTS=[
-  {icon:'📊',title:'Le saviez-vous ?',text:'En France, le marché de la conciergerie Airbnb représente plus de 2 milliards d\'euros de CA annuel. Plus de 15 000 conciergeries opèrent sur le territoire.'},
-  {icon:'⭐',title:'Avis clients',text:'Passer de 4,5 à 4,8 étoiles augmente le taux de clic de 32% et le prix moyen de 18%. Chaque dixième de point compte énormément.'},
-  {icon:'💰',title:'Revenus',text:'La marge nette moyenne d\'une conciergerie bien gérée est de 35 à 45% du CA. Les conciergeries premium atteignent 50% grâce au positionnement haut de gamme.'},
-  {icon:'🔑',title:'Serrures connectées',text:'Les conciergeries équipées de serrures connectées réduisent leurs incidents de remise de clés de 87% et économisent en moyenne 4h de déplacements par semaine.'},
-  {icon:'🏙️',title:'Marché',text:'Le taux d\'occupation moyen national est de 68%. Les conciergeries TOP 10% atteignent 84%. La différence ? Pricing dynamique + réponse aux avis sous 2h.'},
-  {icon:'👥',title:'Ressources humaines',text:'Le turnover dans la conciergerie est de 34% par an en moyenne. Les conciergeries qui investissent en formation et primes variables descendent à 12%.'},
-  {icon:'📱',title:'Digital',text:'78% des voyageurs de moins de 35 ans choisissent un logement en partie pour son expérience digitale : welcome book, serrure connectée, recommandations personnalisées.'},
-  {icon:'🤝',title:'Partenariats',text:'Les conciergeries avec au moins un partenariat hôtelier ou corporate affichent un TO 22% supérieur et une trésorerie 40% plus stable.'},
-  {icon:'📈',title:'Pricing',text:'Le revenue management dynamique génère en moyenne +23% de CA sur la haute saison sans aucun appartement supplémentaire. C\'est le levier le plus sous-utilisé.'},
-  {icon:'🏆',title:'Fidélisation',text:'Un voyageur fidèle revient 2,4 fois par an et dépense 35% de plus qu\'un nouveau. Le coût d\'acquisition d\'un récurrent est 5 fois moins élevé.'},
-  {icon:'⚖️',title:'Réglementation',text:'Depuis 2024, 38 villes françaises ont introduit une réglementation de la location courte durée. Paris limite à 120 nuits/an les résidences principales.'},
-  {icon:'🌟',title:'Excellence',text:'Les conciergeries Superhost (note > 4,8 + taux de réponse > 90%) bénéficient d\'un boost algorithmique qui génère 40% de visibilité supplémentaire.'},
+{icon:'📊',title:'Le saviez-vous ?',text:'En France, le marché de la conciergerie Airbnb représente plus de 2 milliards d\'euros de CA annuel. Plus de 15 000 conciergeries opèrent sur le territoire.'},
+{icon:'⭐',title:'Avis clients',text:'Passer de 4,5 à 4,8 étoiles augmente le taux de clic de 32% et le prix moyen de 18%. Chaque dixième de point compte énormément.'},
+{icon:'💰',title:'Revenus',text:'La marge nette moyenne d\'une conciergerie bien gérée est de 35 à 45% du CA. Les conciergeries premium atteignent 50% grâce au positionnement haut de gamme.'},
+{icon:'🔑',title:'Serrures connectées',text:'Les conciergeries équipées de serrures connectées réduisent leurs incidents de remise de clés de 87% et économisent en moyenne 4h de déplacements par semaine.'},
+{icon:'🏙️',title:'Marché',text:'Le taux d\'occupation moyen national est de 68%. Les conciergeries TOP 10% atteignent 84%. La différence ? Pricing dynamique + réponse aux avis sous 2h.'},
+{icon:'👥',title:'Ressources humaines',text:'Le turnover dans la conciergerie est de 34% par an en moyenne. Les conciergeries qui investissent en formation et primes variables descendent à 12%.'},
+{icon:'📱',title:'Digital',text:'78% des voyageurs de moins de 35 ans choisissent un logement en partie pour son expérience digitale : welcome book, serrure connectée, recommandations personnalisées.'},
+{icon:'🤝',title:'Partenariats',text:'Les conciergeries avec au moins un partenariat hôtelier ou corporate affichent un TO 22% supérieur et une trésorerie 40% plus stable.'},
+{icon:'📈',title:'Pricing',text:'Le revenue management dynamique génère en moyenne +23% de CA sur la haute saison sans aucun appartement supplémentaire. C\'est le levier le plus sous-utilisé.'},
+{icon:'🏆',title:'Fidélisation',text:'Un voyageur fidèle revient 2,4 fois par an et dépense 35% de plus qu\'un nouveau. Le coût d\'acquisition d\'un récurrent est 5 fois moins élevé.'},
+{icon:'⚖️',title:'Réglementation',text:'Depuis 2024, 38 villes françaises ont introduit une réglementation de la location courte durée. Paris limite à 120 nuits/an les résidences principales.'},
+{icon:'🌟',title:'Excellence',text:'Les conciergeries Superhost (note > 4,8 + taux de réponse > 90%) bénéficient d\'un boost algorithmique qui génère 40% de visibilité supplémentaire.'},
 ];
 
 const APT_VISUALS=[
-  {emoji:'🏙️',gradient:'linear-gradient(135deg,#1A2035,#2A3555)',label:'Vue urbaine',desc:'Appartement au cœur du centre-ville avec vue panoramique sur les toits.'},
-  {emoji:'🌆',gradient:'linear-gradient(135deg,#201828,#382040)',label:'Quartier historique',desc:'Charme de l\'ancien avec poutres apparentes et parquet massif.'},
-  {emoji:'🏢',gradient:'linear-gradient(135deg,#141A20,#202C38)',label:'Immeuble moderne',desc:'Architecture contemporaine, équipements haut de gamme.'},
-  {emoji:'🌿',gradient:'linear-gradient(135deg,#0E1A10,#182A1A)',label:'Quartier résidentiel',desc:'Environnement calme et verdoyant, idéal pour les longs séjours.'},
-  {emoji:'🌊',gradient:'linear-gradient(135deg,#0A1420,#142030)',label:'Vue dégagée',desc:'Appartement lumineux avec vue sur la ville depuis le 4e étage.'},
-  {emoji:'🏛️',gradient:'linear-gradient(135deg,#1C1810,#2C2418)',label:'Patrimoine',desc:'Bâtiment classé, moulures et hauteur sous plafond exceptionnelles.'},
-  {emoji:'🌃',gradient:'linear-gradient(135deg,#0C0C20,#181830)',label:'Nocturne',desc:'Appartement en étage élevé, vue nocturne sur la ville illuminée.'},
-  {emoji:'🏡',gradient:'linear-gradient(135deg,#181010,#281A18)',label:'Duplex',desc:'Duplex atypique avec mezzanine et patio privatif.'},
+{emoji:'🏙️',gradient:'linear-gradient(135deg,#1A2035,#2A3555)',label:'Vue urbaine',desc:'Appartement au cœur du centre-ville avec vue panoramique sur les toits.'},
+{emoji:'🌆',gradient:'linear-gradient(135deg,#201828,#382040)',label:'Quartier historique',desc:'Charme de l\'ancien avec poutres apparentes et parquet massif.'},
+{emoji:'🏢',gradient:'linear-gradient(135deg,#141A20,#202C38)',label:'Immeuble moderne',desc:'Architecture contemporaine, équipements haut de gamme.'},
+{emoji:'🌿',gradient:'linear-gradient(135deg,#0E1A10,#182A1A)',label:'Quartier résidentiel',desc:'Environnement calme et verdoyant, idéal pour les longs séjours.'},
+{emoji:'🌊',gradient:'linear-gradient(135deg,#0A1420,#142030)',label:'Vue dégagée',desc:'Appartement lumineux avec vue sur la ville depuis le 4e étage.'},
+{emoji:'🏛️',gradient:'linear-gradient(135deg,#1C1810,#2C2418)',label:'Patrimoine',desc:'Bâtiment classé, moulures et hauteur sous plafond exceptionnelles.'},
+{emoji:'🌃',gradient:'linear-gradient(135deg,#0C0C20,#181830)',label:'Nocturne',desc:'Appartement en étage élevé, vue nocturne sur la ville illuminée.'},
+{emoji:'🏡',gradient:'linear-gradient(135deg,#181010,#281A18)',label:'Duplex',desc:'Duplex atypique avec mezzanine et patio privatif.'},
 ];
 
 const ACQ=[
-  {id:'a1',name:'Loft Bastille',city:'Paris',type:'Loft',emoji:'🏙️',color:'#1A2035',surface:'52m²',ca:1850,invest:3200,tocc:88,note:4.9,badge:'Premium',bc:'premium',desc:'Loft industriel réhabilité dans le 11e. Poutres et briques apparentes. Forte demande week-end.'},
-  {id:'a2',name:'Studio Part-Dieu',city:'Lyon',type:'Studio',emoji:'🌆',color:'#201828',surface:'28m²',ca:920,invest:1500,tocc:82,note:4.6,badge:'Rentable',bc:'',desc:'Studio rénové face à la gare Part-Dieu. Clientèle 100% professionnelle. TO garanti.'},
-  {id:'a3',name:'T3 Le Panier',city:'Marseille',type:'Appartement',emoji:'🏛️',color:'#1C1810',surface:'75m²',ca:2100,invest:4500,tocc:74,note:4.7,badge:'Opportunité',bc:'urgent',desc:'Grand T3 dans le quartier du Panier. Terrasse avec vue mer partielle. Forte saisonnalité estivale.'},
-  {id:'a4',name:'Chartrons Bordeaux',city:'Bordeaux',type:'Appartement',emoji:'🌿',color:'#0E1A10',surface:'60m²',ca:1600,invest:2800,tocc:79,note:4.8,badge:'Stable',bc:'',desc:'Appartement bourgeois dans le quartier des Chartrons. Parquet Versailles, cheminée décorative. Clientèle oenotouristique premium.'},
-  {id:'a5',name:'Promenade Nice',city:'Nice',type:'Appartement',emoji:'🌊',color:'#0A1420',surface:'45m²',ca:2400,invest:5000,tocc:71,note:4.9,badge:'Premium',bc:'premium',desc:'À 100m de la Promenade des Anglais. Vue mer depuis le salon. Clientèle internationale (50% étrangers).'},
-  {id:'a6',name:'Croix-Rousse',city:'Lyon',type:'Appartement',emoji:'🌃',color:'#0C0C20',surface:'55m²',ca:1350,invest:2200,tocc:76,note:4.7,badge:'Tendance',bc:'',desc:'Appartement typique de la Croix-Rousse avec traboule privative. Clientèle bobo créative très en demande.'},
-  {id:'a7',name:'Villa Fourvière',city:'Lyon',type:'Villa',emoji:'🏡',color:'#181010',surface:'120m²',ca:3200,invest:8000,tocc:65,note:5.0,badge:'Exclusif',bc:'premium',desc:'Villa avec jardin sur les hauteurs de Fourvière. Vue exceptionnelle sur Lyon. 3 chambres. Pour clientèle premium.'},
-  {id:'a8',name:'Vieux-Port Studio',city:'Marseille',type:'Studio',emoji:'🏢',color:'#141A20',surface:'32m²',ca:1100,invest:1800,tocc:80,note:4.5,badge:'Fort TO',bc:'',desc:'Studio vue sur le Vieux-Port depuis le 5e étage. Réservé quasi-intégralement de mai à septembre.'},
+{id:'a1',name:'Loft Bastille',city:'Paris',type:'Loft',emoji:'🏙️',color:'#1A2035',surface:'52m²',ca:1850,invest:3200,tocc:88,note:4.9,badge:'Premium',bc:'premium',desc:'Loft industriel réhabilité dans le 11e. Poutres et briques apparentes. Forte demande week-end.'},
+{id:'a2',name:'Studio Part-Dieu',city:'Lyon',type:'Studio',emoji:'🌆',color:'#201828',surface:'28m²',ca:920,invest:1500,tocc:82,note:4.6,badge:'Rentable',bc:'',desc:'Studio rénové face à la gare Part-Dieu. Clientèle 100% professionnelle. TO garanti.'},
+{id:'a3',name:'T3 Le Panier',city:'Marseille',type:'Appartement',emoji:'🏛️',color:'#1C1810',surface:'75m²',ca:2100,invest:4500,tocc:74,note:4.7,badge:'Opportunité',bc:'urgent',desc:'Grand T3 dans le quartier du Panier. Terrasse avec vue mer partielle. Forte saisonnalité estivale.'},
+{id:'a4',name:'Chartrons Bordeaux',city:'Bordeaux',type:'Appartement',emoji:'🌿',color:'#0E1A10',surface:'60m²',ca:1600,invest:2800,tocc:79,note:4.8,badge:'Stable',bc:'',desc:'Appartement bourgeois dans le quartier des Chartrons. Parquet Versailles, cheminée décorative. Clientèle oenotouristique premium.'},
+{id:'a5',name:'Promenade Nice',city:'Nice',type:'Appartement',emoji:'🌊',color:'#0A1420',surface:'45m²',ca:2400,invest:5000,tocc:71,note:4.9,badge:'Premium',bc:'premium',desc:'À 100m de la Promenade des Anglais. Vue mer depuis le salon. Clientèle internationale (50% étrangers).'},
+{id:'a6',name:'Croix-Rousse',city:'Lyon',type:'Appartement',emoji:'🌃',color:'#0C0C20',surface:'55m²',ca:1350,invest:2200,tocc:76,note:4.7,badge:'Tendance',bc:'',desc:'Appartement typique de la Croix-Rousse avec traboule privative. Clientèle bobo créative très en demande.'},
+{id:'a7',name:'Villa Fourvière',city:'Lyon',type:'Villa',emoji:'🏡',color:'#181010',surface:'120m²',ca:3200,invest:8000,tocc:65,note:5.0,badge:'Exclusif',bc:'premium',desc:'Villa avec jardin sur les hauteurs de Fourvière. Vue exceptionnelle sur Lyon. 3 chambres. Pour clientèle premium.'},
+{id:'a8',name:'Vieux-Port Studio',city:'Marseille',type:'Studio',emoji:'🏢',color:'#141A20',surface:'32m²',ca:1100,invest:1800,tocc:80,note:4.5,badge:'Fort TO',bc:'',desc:'Studio vue sur le Vieux-Port depuis le 5e étage. Réservé quasi-intégralement de mai à septembre.'},
 ];
 
 const SC_POOL={
@@ -692,234 +678,15 @@ choices:[{t:'Cap premium : 10 appartements 4★+ avec tarifs hauts et clientèle
 ]};
 
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
-
-// ══════════════════════════════════════════
-// SCÉNARIOS EXCLUSIFS PAR VILLE
-// Injectés dans le pool selon la ville choisie
-// ══════════════════════════════════════════
-const SC_CITY_EXCLUSIVE = {
-  'Paris': [
-    {month:3,tag:'fi',tagL:'Événement Paris',icon:'👗',
-     title:'Fashion Week — prix ×2 ou fidelité ?',
-     desc:'La Fashion Week de Paris commence dans 3 jours. Vous pouvez doubler vos tarifs (120€ → 240€/nuit) pour maximiser le CA, ou garder vos tarifs habituels pour fidéliser vos clients réguliers qui avaient réservé avant.',
-     ch:{'Paris':'Pendant la Fashion Week, des conciergeries parisiennes atteignent 95% d'occupation à prix doublés. C'est 10 jours par an à ne pas rater.'},
-     choices:[
-      {t:'Doubler les tarifs immédiatement sur toutes les nuits Fashion Week disponibles',r:+5,ca:+1800,q:0,s:+3,tr:+1800,o:'good',fb:'CA exceptionnel sur ces 10 jours. Vous générez en 10 jours ce que vous faites normalement en 3 semaines.',c:'💡 Les événements comme la Fashion Week représentent 15 à 20% du CA annuel d'une conciergerie parisienne bien gérée. Programmez ces hausses 6 mois à l'avance.'},
-      {t:'Augmenter modérément (+50%) pour ne pas perdre vos clients réguliers',r:+3,ca:+900,q:0,s:+8,tr:+900,o:'ok',fb:'Bonne décision d'équilibre. Vous gagnez moins qu'au maximum mais gardez une clientèle fidèle qui reviendra.',c:'💡 La fidélisation vaut parfois plus que le pic de revenus. Analysez le profil de vos clients avant de décider.'},
-      {t:'Garder les tarifs habituels — vous ne voulez pas paraître opportuniste',r:0,ca:0,q:0,s:+5,tr:0,o:'bad',fb:'Erreur stratégique. Vous laissez des milliers d'euros sur la table. La Fashion Week est précisément faite pour maximiser les revenus.',c:'💡 Le yield management n'est pas de l'opportunisme — c'est de la gestion professionnelle. Vos concurrents ont tous doublé leurs tarifs.'},
-     ]},
-    {month:5,tag:'ur',tagL:'Urgence Paris',icon:'⚖️',
-     title:'Contrôle 120 nuits — appartement en dépassement',
-     desc:'La mairie de Paris contrôle vos déclarations. Votre appartement du 11e arrondissement a atteint 118 nuits louées cette année. Il vous reste 4 réservations confirmées pour les 6 prochaines semaines.',
-     ch:{'Paris':'Paris applique la règle des 90 nuits pour les résidences principales. L'amende peut atteindre 50 000€ par logement en infraction.'},
-     choices:[
-      {t:'Annuler les 4 réservations excédentaires et rembourser intégralement',r:+8,ca:-480,q:0,s:-5,tr:-480,o:'good',fb:'Décision légalement correcte et professionnelle. Les clients remboursés apprécient votre transparence. Aucun risque juridique.',c:'💡 La conformité légale à Paris est non-négociable. Une amende de 50 000€ ruinerait votre activité. Utilisez un compteur de nuits dans vos outils de gestion.'},
-      {t:'Ignorer et espérer que le contrôle ne va pas plus loin',r:-20,ca:0,q:-5,s:0,tr:-15000,o:'bad',fb:'Catastrophe. Le contrôle est formel. Amende de 15 000€ pour 4 nuits en dépassement. Votre réputation auprès de la mairie est compromise.',c:'💡 La mairie de Paris a renforcé ses contrôles depuis 2022. Les amendes sont réelles et systématiques. Ne jamais ignorer un contrôle officiel.'},
-      {t:'Transformer les 4 réservations en location meublée classique (bail mobilité)',r:+5,ca:-100,q:0,s:+2,tr:-100,o:'ok',fb:'Solution légale intelligente. Le bail mobilité (1 à 10 mois) n'est pas soumis à la règle des 90 nuits. Légèrement moins rentable mais 100% conforme.',c:'💡 Le bail mobilité est une alternative méconnue mais très utile. Renseignez-vous auprès d'un notaire pour l'utiliser à bon escient.'},
-     ]},
-  ],
-  'Lyon': [
-    {month:12,tag:'fi',tagL:'Événement Lyon',icon:'💡',
-     title:'Festival Lumières — la nuit qui vaut 3 semaines',
-     desc:'Le Festival Lumières de Lyon approche (8-11 décembre). L'année dernière, les prix ont atteint 350€/nuit en centre-ville. Vos appartements sont bien placés. Comment optimisez-vous ces 4 nuits exceptionnelles ?',
-     ch:{'Lyon':'Le Festival Lumières est l'événement le plus fréquenté de France après le 14 juillet : 2 millions de visiteurs en 4 jours. Les conciergeries lyonnaises génèrent en moyenne 35% de leur CA de décembre en 4 nuits.'},
-     choices:[
-      {t:'Passer en tarification dynamique max : 280–350€/nuit pour ces 4 nuits',r:+5,ca:+2800,q:0,s:+5,tr:+2800,o:'good',fb:'CA exceptionnel. Ces 4 nuits représentent 35% de votre CA de décembre. Vous êtes complet dès novembre.',c:'💡 Le Festival Lumières est l'événement à ne jamais rater dans votre calendrier tarifaire lyonnais. Programmez vos hausses dès septembre.'},
-      {t:'Augmenter modérément à 180€/nuit pour rester accessible',r:+2,ca:+1200,q:0,s:+8,tr:+1200,o:'ok',fb:'Vous êtes complet mais sous-optimisé. Vous laissez 1 600€ sur la table vs la stratégie maximale.',c:'💡 L'accessibilité est une valeur mais pas pendant un événement où la demande dépasse l'offre de 10 fois. Maximisez quand c'est justifié.'},
-      {t:'Garder les tarifs habituels — vous avez déjà des réservations en cours',r:-5,ca:0,q:0,s:+3,tr:0,o:'bad',fb:'Erreur majeure. Vos réservations en cours sont à 85€/nuit alors que le marché est à 300€+. Vous perdez 850€ par appartement sur ces 4 nuits.',c:'💡 Les réservations à tarif normal pour le Festival Lumières sont une erreur de pricing. Fermez vos calendriers en juin pour ne rouvrir qu'à prix Festival.'},
-     ]},
-    {month:9,tag:'cr',tagL:'Développement Lyon',icon:'🍽️',
-     title:'Sirha — 200 000 professionnels à loger',
-     desc:'Le Sirha (salon mondial de la restauration) arrive en janvier. Les hôtels sont déjà complets. Des agences de voyage professionnelles vous contactent pour bloquer 8 appartements sur 5 nuits. Budget : 150€/nuit/appart.',
-     ch:{'Lyon':'Le Sirha est le salon professionnel le plus important de Lyon. Il attire 200 000 professionnels de la restauration mondiale. Les conciergeries bien positionnées signent des contrats corporate annuels grâce à cet événement.'},
-     choices:[
-      {t:'Accepter le contrat groupe et proposer un service conciergerie premium pour les pros',r:+10,ca:+6000,q:-5,s:+12,tr:+6000,o:'good',fb:'Contrat signé. 8 apparts × 5 nuits × 150€ = 6 000€ en une transaction. L'agence devient cliente régulière pour tous les événements lyonnais.',c:'💡 Les événements professionnels comme le Sirha sont une porte d'entrée vers les contrats corporate annuels. Soignez cette clientèle.'},
-      {t:'Négocier à 180€/nuit — vous pouvez obtenir plus',r:+8,ca:+7200,q:-3,s:+8,tr:+7200,o:'good',fb:'Négociation réussie ! L'agence accepte 175€. CA amélioré et relation établie.',c:'💡 Les agences corporate ont souvent une marge de négociation de 15 à 20%. Il faut toujours essayer.'},
-      {t:'Refuser — vous préférez gérer au cas par cas',r:0,ca:0,q:+5,s:0,tr:0,o:'bad',fb:'Occasion manquée. L'agence signe avec un concurrent. Vous perdez 6 000€ et surtout la relation long terme.',c:'💡 Les contrats groupe événementiels sont la base des revenus stables en conciergerie. Ne les refusez jamais sans excellente raison.'},
-     ]},
-  ],
-  'Marseille': [
-    {month:6,tag:'fi',tagL:'Haute saison Marseille',icon:'⛵',
-     title:'Début haute saison — stratégie estivale',
-     desc:'Juin arrive. Votre TO passe de 55% à 80% cette semaine. Vous devez décider de votre stratégie tarifaire pour juillet-août. Option A : tarifs dynamiques max. Option B : forfait "séjour été" 7 nuits minimum.',
-     ch:{'Marseille':'Juillet-août à Marseille : TO 88-92%. Les conciergeries qui imposent un minimum de 7 nuits réduisent leurs rotations (moins de ménages, moins d'usure) tout en maximisant les revenus.'},
-     choices:[
-      {t:'Tarifs dynamiques max + minimum 5 nuits en juillet-août',r:+8,ca:+2200,q:+8,s:+5,tr:+2200,o:'good',fb:'Excellente stratégie estivale. Moins de rotations = moins de stress pour l'équipe + revenus maximisés. TO 90% sur juillet-août.',c:'💡 Le minimum de nuits en haute saison est la meilleure décision opérationnelle estivale. Moins de ménages, moins d'urgences, plus de marge.'},
-      {t:'Laisser les réservations libres sans minimum de nuits',r:+3,ca:+1200,q:-10,s:+3,tr:+1200,o:'ok',fb:'CA en hausse mais l'équipe est épuisée avec 3 rotations/semaine/appart en pleine canicule. Deux démissions évitées de justesse.',c:'💡 L'été à Marseille sans minimum de nuits crée une pression opérationnelle intense. Votre équipe est votre actif principal — protégez-la.'},
-      {t:'Garder les mêmes tarifs qu'en mai pour fidéliser les clients réguliers',r:-5,ca:0,q:0,s:+8,tr:0,o:'bad',fb:'Erreur stratégique majeure. Vos clients réguliers adorent mais vous perdez 2 200€/mois de CA estival. L'été est votre seule vraie saison à Marseille.',c:'💡 L'été représente 40% du CA annuel d'une conciergerie marseillaise. C'est la saison où la tarification dynamique est non-négociable.'},
-     ]},
-    {month:10,tag:'cr',tagL:'Intersaison Marseille',icon:'🚢',
-     title:'Partenariat croisières MSC — clientèle pré/post embarquement',
-     desc:'MSC Croisières vous contacte pour un partenariat : loger leurs passagers la nuit avant embarquement et la nuit après débarquement. 30 nuits/mois garanties à 95€/nuit. Mais exigences strictes : linge luxe, navette port, disponibilité 24h.',
-     ch:{'Marseille':'Le port de Marseille est le 1er port de croisières de Méditerranée. 3 millions de passagers/an dont une large part cherche un hébergement autour de l'embarquement. Les partenariats croisières peuvent représenter 25% du CA annuel d'une conciergerie marseillaise.'},
-     choices:[
-      {t:'Accepter le partenariat et investir dans les standards demandés (linge + navette)',r:+10,ca:+2850,q:-5,s:+10,tr:+1850,o:'good',fb:'Partenariat signé. 30 nuits garanties/mois = 2 850€ récurrents. La navette coûte 1 000€/mois mais l'image premium justifie des tarifs plus élevés sur vos autres réservations.',c:'💡 Les partenariats croisières sont une source de revenus exceptionnellement stable. Un seul contrat peut sécuriser 30% de votre CA annuel.'},
-      {t:'Négocier les exigences à la baisse (pas de navette, linge standard)',r:+3,ca:+2850,q:0,s:+3,tr:+2850,o:'ok',fb:'MSC accepte partiellement. Partenariat obtenu mais classé "standard" — pas les meilleures cabines redirigées vers vous.',c:'💡 Dans les partenariats B2B, les exigences élevées correspondent souvent à une clientèle à fort pouvoir d'achat. Réfléchissez avant de négocier à la baisse.'},
-      {t:'Refuser — trop contraignant pour votre organisation actuelle',r:0,ca:0,q:+5,s:0,tr:0,o:'bad',fb:'Un concurrent signe à votre place. Il aura 30 nuits garanties chaque mois pendant que vous subissez l'intersaison avec 45% de TO.',c:'💡 L'intersaison marseillaise (oct-avril) est difficile. Un contrat croisières est précisément la stabilité dont vous avez besoin.'},
-     ]},
-  ],
-  'Bordeaux': [
-    {month:4,tag:'fi',tagL:'Événement Bordeaux',icon:'🍷',
-     title:'Semaine des Primeurs — prix ×4 ou engagement long terme ?',
-     desc:'La semaine des Primeurs commence dans 10 jours. Les négociants viticoles du monde entier arrivent à Bordeaux. Les hôtels affichent complet depuis 6 mois. Vous pouvez facturer 350€/nuit cette semaine (vs 82€ habituellement).',
-     ch:{'Bordeaux':'La semaine des Primeurs est l'événement le plus lucratif de l'année à Bordeaux pour les conciergeries. Les négociants ont des budgets élevés et exigent une qualité irréprochable. Une seule mauvaise expérience et vous perdez un client qui réserve 5 ans de suite.'},
-     choices:[
-      {t:'Facturer 350€/nuit et proposer un service "Primeurs Premium" (bouteille offerte, guide châteaux)',r:+12,ca:+3500,q:0,s:+15,tr:+3500,o:'good',fb:'Semaine exceptionnelle. CA record. Trois négociants réservent déjà pour l'année prochaine. La bouteille offerte à 25€ a généré des réservations annuelles à 350€/nuit.',c:'💡 Les Primeurs à Bordeaux, c'est comme le Festival Lumières à Lyon — une semaine qui peut valoir 20% du CA annuel si bien préparée.'},
-      {t:'Facturer 250€/nuit — prix élevé mais raisonnable pour fidéliser',r:+8,ca:+2500,q:0,s:+10,tr:+2500,o:'ok',fb:'Bonne décision équilibrée. Vous êtes complet et vos clients reviendront. Légèrement sous-optimisé vs le marché mais excellent rapport qualité-prix client.',c:'💡 La fidélisation sur les Primeurs vaut de l'or. Un négociant fidèle représente 5 ans de réservations garanties.'},
-      {t:'Garder vos tarifs habituels — vous avez déjà des réservations en cours',r:-8,ca:0,q:0,s:+5,tr:0,o:'bad',fb:'Erreur majeure. Vos réservations à 82€/nuit pendant les Primeurs représentent une perte sèche de 2 000€ vs le tarif marché. Vos concurrents ont fermé leurs calendriers dès janvier.',c:'💡 Pour les Primeurs, fermez votre calendrier en octobre et ne rouvrez qu'à prix Primeurs. C'est la règle d'or de chaque conciergerie bordelaise.'},
-     ]},
-    {month:9,tag:'cr',tagL:'Développement Bordeaux',icon:'🌿',
-     title:'Vendanges — créer une offre "oenotourisme séjour"',
-     desc:'Les vendanges commencent. Des châteaux viticoles vous contactent pour héberger leurs acheteurs internationaux. Ils cherchent des appartements "coup de cœur Bordeaux" pour des séjours de 3 à 7 nuits.',
-     ch:{'Bordeaux':'Le tourisme viticole à Bordeaux représente 6,5 millions de visiteurs/an. Les châteaux cherchent des partenaires d'hébergement fiables qui reflètent l'image premium de leurs vins. Un partenariat avec un château Grand Cru peut valoir 50 000€ de CA sur 3 ans.'},
-     choices:[
-      {t:'Créer un package "Séjour Vendanges" : appart + visite château + coffret vins',r:+10,ca:+1800,q:+5,s:+15,tr:+800,o:'good',fb:'Succès immédiat. 4 châteaux signent un partenariat annuel. Votre positionnement "oenotourisme premium" vous différencie radicalement de vos concurrents.',c:'💡 Le package oenotouristique est l'argument différenciant ultime à Bordeaux. Il justifie des prix 30% plus élevés et attire une clientèle à fort pouvoir d'achat.'},
-      {t:'Accepter les demandes des châteaux sans créer de package spécifique',r:+5,ca:+1200,q:0,s:+8,tr:+1200,o:'ok',fb:'CA en hausse mais vous passez à côté de l'effet de marque. Les châteaux vous voient comme un prestataire, pas comme un partenaire.',c:'💡 La différence entre prestataire et partenaire, c'est la valeur ajoutée. Le package transforme une transaction en relation long terme.'},
-      {t:'Refuser — trop complexe à organiser les visites châteaux',r:-3,ca:0,q:+3,s:0,tr:0,o:'bad',fb:'Les châteaux se tournent vers une conciergerie concurrente qui a saisi l'opportunité. Vous perdez le meilleur levier de différenciation de votre marché.',c:'💡 À Bordeaux, ne pas exploiter le tourisme viticole dans son offre conciergerie, c'est comme avoir un appartement vue mer à Nice et ne pas le mentionner dans son annonce.'},
-     ]},
-  ],
-  'Nice': [
-    {month:5,tag:'fi',tagL:'Événement Nice',icon:'🏎️',
-     title:'Grand Prix F1 Monaco — la semaine à 1 000€/nuit',
-     desc:'Le Grand Prix de Monaco approche. Nice est la base arrière de l'événement. Des agences événementielles vous contactent pour bloquer tous vos appartements sur 5 nuits à 450€/nuit. Votre tarif habituel est 110€.',
-     ch:{'Nice':'Le Grand Prix de Monaco est l'événement avec le meilleur ROI tarifaire de toute la Côte d'Azur. Les conciergeries niçoises bien positionnées génèrent en 5 nuits l'équivalent de 3 mois de CA normal. Les réservations se prennent 8 mois à l'avance.'},
-     choices:[
-      {t:'Accepter à 450€/nuit — c'est ×4 votre tarif habituel mais le marché le justifie',r:+8,ca:+4500,q:0,s:+8,tr:+4500,o:'good',fb:'Semaine record. 4 500€ en 5 nuits pour un appartement. L'agence événementielle devient cliente annuelle pour Monaco, Cannes et le MIPIM.',c:'💡 Le Grand Prix est THE événement tarifaire de Nice. Programmez vos tarifs ×4 dès janvier. Les agences événementielles réservent en septembre pour mai.'},
-      {t:'Négocier à 600€/nuit — vous pouvez obtenir encore plus',r:+5,ca:+3000,q:0,s:+3,tr:+3000,o:'ok',fb:'L'agence accepte 520€. Excellent. Légèrement moins de volume mais meilleure marge unitaire.',c:'💡 Sur un événement comme Monaco, la demande dépasse l'offre de 20 à 1. Vous pouvez négocier. La limite est la réputation que vous voulez construire avec les agences événementielles.'},
-      {t:'Refuser — vous préférez vos clients habituels qui réservent à 110€',r:-15,ca:0,q:0,s:+5,tr:0,o:'bad',fb:'Erreur stratégique majeure. Vos clients habituels à 110€/nuit vous remercient mais vous venez de refuser 4 500€ pour 5 nuits. Soit 900€/nuit de différence par appartement.',c:'💡 Le Grand Prix n'est pas une question de fidélité — c'est une question de survie financière. Ces 5 nuits peuvent financer 2 mois d'opérations.'},
-     ]},
-    {month:2,tag:'ur',tagL:'Urgence Nice',icon:'🎭',
-     title:'Carnaval de Nice — gestion de la foule et des nuisances',
-     desc:'Le Carnaval commence demain. 1 million de visiteurs attendus en 2 semaines. Vos appartements sont complets à prix ×3. Mais vous recevez déjà des alertes : bruits nocturnes, déchets dans les couloirs, voisins qui menacent de porter plainte.',
-     ch:{'Nice':'Le Carnaval de Nice est le 3e plus grand au monde. Il génère d'excellents revenus mais aussi les plus fortes tensions avec les voisins de l'année. Les conciergeries qui survivent bien au Carnaval ont toutes un protocole "Carnaval" spécifique.'},
-     choices:[
-      {t:'Envoyer un message de bienvenue avec règles strictes + numéro d'astreinte + caution renforcée',r:+10,ca:0,q:+5,s:+8,tr:0,o:'good',fb:'Zéro incident majeur pendant les 2 semaines. Vos voyageurs ont respecté les règles grâce au cadre clair. Les voisins vous félicitent.',c:'💡 Le protocole Carnaval doit être envoyé 48h avant l'arrivée et inclure : horaires de silence, gestion des déchets, numéro d'urgence, et conséquences de la caution.'},
-      {t:'Gérer les problèmes au fur et à mesure sans protocole préventif',r:-3,ca:0,q:-8,s:-5,tr:-200,o:'bad',fb:'3 appels de voisins en 2 semaines. Un début de plainte en copropriété. Votre équipe est épuisée. 200€ de remboursement commercial pour calmer un voisin furieux.',c:'💡 La prévention vaut 10× la gestion de crise. Un protocole envoyé avant l'arrivée élimine 80% des problèmes Carnaval.'},
-      {t:'Refuser les réservations pendant le Carnaval — trop de risques',r:-5,ca:-3000,q:+10,s:0,tr:-3000,o:'bad',fb:'Vous perdez 3 000€ de CA et vos concurrents récupèrent toutes ces réservations. Le Carnaval est risqué mais gérable avec les bons outils.',c:'💡 Refuser le Carnaval, c'est refuser 15% du CA de février. La solution n'est pas l'évitement mais le protocole préventif.'},
-     ]},
-  ]
-};
-
-// Inject city exclusive scenarios into the pool
-function buildSC(){
-  const l=[];
-  for(let m=1;m<=12;m++){
-    const p=SC_POOL[m]||[];
-    // Add city exclusive scenarios for this month if any
-    const cityExcl = SC_CITY_EXCLUSIVE[P.city] || [];
-    const cityMonthScens = cityExcl.filter(s => s.month === m);
-    const combined = [...p, ...cityMonthScens];
-    shuffle(combined).slice(0,5).forEach(s=>l.push({...s,month:m}));
-  }
-  return l;
-}
-
+function buildSC(){const l=[];for(let m=1;m<=12;m++){const p=SC_POOL[m]||[];shuffle(p).slice(0,5).forEach(s=>l.push({...s,month:m}));}return l;}
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+id).classList.add('active');}
 function toast(title,body){document.getElementById('toast-t').textContent=title;document.getElementById('toast-b').textContent=body;const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4500);}
 
-
-// ══════════════════════════════════════════
-// PROFILS VILLES — données marché réelles 2024
-// ══════════════════════════════════════════
-const CITY_PROFILES = {
-  'Paris': {
-    toBase: 76, caBase: 5200, repBase: 70, tresoBase: 9000,
-    prixNuit: 118, clientele: 'internationale + business',
-    saisonnalite: 'stable toute l'année avec pics avril-juin et sept-oct',
-    reglementation: '90 nuits/an max pour résidence principale — contrôles fréquents',
-    difficulte: 'Élevée',
-    avantages: ['Marché le plus profond de France', 'Prix/nuit parmi les plus élevés', 'Demande toute l'année'],
-    defis: ['Concurrence très forte', 'Réglementation stricte', 'Coûts opérationnels élevés'],
-    // Événements qui boostent les prix — mois concernés
-    events: {
-      3: {name:'Fashion Week Printemps', boost: +25, desc:'La Fashion Week Paris génère une demande exceptionnelle. Prix ×2 minimum.'},
-      5: {name:'Roland Garros', boost: +30, desc:'Roland Garros crée un pic de 3 semaines. Taux d'occupation 95%+.'},
-      6: {name:'Paris Air Show', boost: +20, desc:'Le Salon du Bourget attire 300 000 professionnels. Réservez vos prix à l'avance.'},
-      10: {name:'Fashion Week Automne', boost: +25, desc:'Deuxième Fashion Week de l'année. Même impact que celle de mars.'},
-      11: {name:'Ventes aux enchères Christie's', boost: +15, desc:'Les grandes ventes attirent une clientèle ultra-premium.'},
-    }
-  },
-  'Lyon': {
-    toBase: 68, caBase: 4600, repBase: 72, tresoBase: 8500,
-    prixNuit: 85, clientele: '70% business semaine, tourisme week-end',
-    saisonnalite: 'stable avec pics événementiels prévisibles',
-    reglementation: '90 nuits/an — déclaration en mairie obligatoire depuis 2020',
-    difficulte: 'Modérée',
-    avantages: ['Clientèle pro stable et fidèle', 'Marché en croissance', 'Coûts opérationnels raisonnables'],
-    defis: ['TO plus faible le week-end', 'Concurrence des appart-hôtels corporate', 'Intersaison creuse juillet-août'],
-    events: {
-      5: {name:'Nuits de Fourvière', boost: +18, desc:'Le festival Nuits de Fourvière attire 150 000 spectateurs. Forte demande week-end.'},
-      9: {name:'Biennale de Lyon', boost: +22, desc:'La Biennale d'Art contemporain génère un afflux de visiteurs culturels internationaux.'},
-      10: {name:'Sirha & Bocuse d'Or', boost: +28, desc:'Le Sirha est le plus grand salon mondial de la restauration. 200 000 professionnels.'},
-      12: {name:'Festival Lumières', boost: +35, desc:'Le Festival Lumières est l'événement le plus fréquenté de France après le 14 juillet. Prix ×3.'},
-    }
-  },
-  'Marseille': {
-    toBase: 58, caBase: 4200, repBase: 68, tresoBase: 7800,
-    prixNuit: 78, clientele: 'tourisme estival dominant, croisières',
-    saisonnalite: 'extrêmement saisonnière : hiver creux, été saturé',
-    reglementation: '90 nuits/an — réglementation en évolution rapide',
-    difficulte: 'Variable (facile été, difficile hiver)',
-    avantages: ['Été très rentable (85-90% TO)', 'Clientèle croisières en forte hausse', 'Prix estivaux élevés'],
-    defis: ['Hiver très creux (40-45% TO)', 'Gestion de la saisonnalité complexe', 'Image sécuritaire à gérer'],
-    events: {
-      4: {name:'Saison croisières MSC/Costa', boost: +20, desc:'La saison des croisières commence. Les croisiéristes cherchent des nuits avant/après embarquement.'},
-      6: {name:'Début haute saison', boost: +30, desc:'Juin marque le début de la haute saison. TO passe de 58% à 80% en 3 semaines.'},
-      7: {name:'Pic estival', boost: +40, desc:'Juillet-août : taux d'occupation 90%+. Marseille est saturée. Maximisez vos tarifs.'},
-      9: {name:'MaSSilia Sound System Festival', boost: +15, desc:'Les grands festivals de fin d'été maintiennent la demande en septembre.'},
-    }
-  },
-  'Bordeaux': {
-    toBase: 66, caBase: 4400, repBase: 71, tresoBase: 8200,
-    prixNuit: 82, clientele: 'oenotourisme premium + business',
-    saisonnalite: 'saisonnalité modérée avec pics viticoles très marqués',
-    reglementation: '90 nuits/an — zones de compensation centre-ville',
-    difficulte: 'Modérée',
-    avantages: ['Clientèle oenotouristique à fort pouvoir d'achat', 'Marché en forte croissance post-LGV', 'Niche différenciante'],
-    defis: ['Marché plus petit que Paris/Lyon', 'Forte dépendance au calendrier viticole', 'Hiver relativement creux'],
-    events: {
-      4: {name:'Primeurs — semaine des châteaux', boost: +45, desc:'LA semaine la plus importante de l'année à Bordeaux. Négociants du monde entier. Prix ×4 minimum.'},
-      6: {name:'Bordeaux Fête le Vin', boost: +35, desc:'300 000 visiteurs sur les quais. L'événement oenotouristique le plus important d'Europe.'},
-      9: {name:'Vendanges', boost: +25, desc:'Les vendanges attirent des oenotouristes premium. Excellente période pour les offres "wine tour".'},
-      11: {name:'Open de Bordeaux (tennis)', boost: +20, desc:'L'Open de tennis attire une clientèle sportive et corporate.'},
-    }
-  },
-  'Nice': {
-    toBase: 62, caBase: 5000, repBase: 73, tresoBase: 9500,
-    prixNuit: 110, clientele: 'luxe international (50% étrangers)',
-    saisonnalite: 'très saisonnière : hiver doux mais creux, été saturé et très cher',
-    reglementation: '120 nuits/an max — contrôles renforcés',
-    difficulte: 'Élevée (clientèle exigeante)',
-    avantages: ['Prix/nuit parmi les plus élevés après Paris', 'Clientèle internationale fidèle', 'Hiver doux (retraités nordiques)'],
-    defis: ['Clientèle très exigeante — notes dures', 'Concurrence hôtelière luxe forte', 'Gestion bilingue indispensable'],
-    events: {
-      2: {name:'Carnaval de Nice', boost: +38, desc:'Le Carnaval est le 3e plus grand du monde. 1 million de visiteurs. Réservations 6 mois à l'avance.'},
-      5: {name:'Grand Prix de F1 Monaco', boost: +50, desc:'LE pic de l'année. Nice est la base arrière du Grand Prix. Prix ×5. Réservez vos prix dès janvier.'},
-      5: {name:'Festival de Cannes', boost: +40, desc:'Le Festival de Cannes génère un débordement massif vers Nice. Clientèle cinéma internationale.'},
-      7: {name:'Pic estival Riviera', boost: +45, desc:'Juillet-août sur la Riviera : taux d'occupation 92%+. Prix record. Clientèle yacht et luxe.'},
-      11: {name:'Arrivée des retraités nordiques', boost: +15, desc:'Les retraités suédois, norvégiens et allemands occupent Nice de novembre à mars. Séjours longs.'},
-    }
-  }
-};
-
-// KPIs de départ adaptés à chaque ville
-function getCityStartStats(city) {
-  const p = CITY_PROFILES[city];
-  if (!p) return {rep:72, ca:4800, qvt:65, satis:70, tresorerie:8500};
-  return {
-    rep: p.repBase,
-    ca: p.caBase,
-    qvt: 65,
-    satis: 70,
-    tresorerie: p.tresoBase
-  };
-}
-
-function initState(){const _cs=getCityStartStats(P.city);G={month:1,si:0,rep:_cs.rep,ca:_cs.ca,qvt:_cs.qvt,satis:_cs.satis,tresorerie:_cs.tresorerie,scenarios:buildSC(),
-  apts:[{id:1,name:'Studio Centre',note:4.6,status:'ok',locked:false,ca:800,v:0},{id:2,name:'T2 Quartier Affaires',note:4.3,status:'ok',locked:false,ca:1100,v:2},{id:3,name:'T1 Vieille Ville',note:4.8,status:'warn',locked:false,ca:950,v:5},{id:4,name:'T3 Nouveau Quartier',note:3.9,status:'bad',locked:false,ca:1200,v:3},{id:5,name:'Studio Gare',note:4.5,status:'ok',locked:false,ca:750,v:1},{id:6,name:'T2 Quartier Tendance',note:0,status:'locked',locked:true,ca:0,v:6},{id:7,name:'Grande Villa',note:0,status:'locked',locked:true,ca:0,v:7},{id:8,name:'Loft Industriel',note:0,status:'locked',locked:true,ca:0,v:4}],
-  staff:[{id:1,name:'Amina B.',role:'Ménage',mood:75,av:'AB',col:'#4A6A9A'},{id:2,name:'Julien M.',role:'Check-in',mood:60,av:'JM',col:'#6A4A9A'},{id:3,name:'Sara L.',role:'Maintenance',mood:80,av:'SL',col:'#4A9A6A'}],
-  levelup:false,history:[],acqOwned:[]};}
+function initState(){G={month:1,si:0,rep:72,ca:4800,qvt:65,satis:70,tresorerie:8500,scenarios:buildSC(),
+apts:[{id:1,name:'Studio Centre',note:4.6,status:'ok',locked:false,ca:800,v:0},{id:2,name:'T2 Quartier Affaires',note:4.3,status:'ok',locked:false,ca:1100,v:2},{id:3,name:'T1 Vieille Ville',note:4.8,status:'warn',locked:false,ca:950,v:5},{id:4,name:'T3 Nouveau Quartier',note:3.9,status:'bad',locked:false,ca:1200,v:3},{id:5,name:'Studio Gare',note:4.5,status:'ok',locked:false,ca:750,v:1},{id:6,name:'T2 Quartier Tendance',note:0,status:'locked',locked:true,ca:0,v:6},{id:7,name:'Grande Villa',note:0,status:'locked',locked:true,ca:0,v:7},{id:8,name:'Loft Industriel',note:0,status:'locked',locked:true,ca:0,v:4}],
+staff:[{id:1,name:'Amina B.',role:'Ménage',mood:75,av:'AB',col:'#4A6A9A'},{id:2,name:'Julien M.',role:'Check-in',mood:60,av:'JM',col:'#6A4A9A'},{id:3,name:'Sara L.',role:'Maintenance',mood:80,av:'SL',col:'#4A9A6A'}],
+levelup:false,history:[],acqOwned:[]};}
 
 function selectTheme(t){document.body.setAttribute('data-theme',t);showScreen('onboard');}
 function checkStep1(){const n=document.getElementById('inp-name').value.trim();const a=document.getElementById('inp-agency').value.trim();document.getElementById('btn-step1').disabled=!(n.length>=2&&a.length>=2);}
@@ -944,24 +711,7 @@ function setAcqF(f){acqF=f;renderAcqView();}
 function buyAcq(id,invest){if(G.tresorerie<invest){toast('Budget insuffisant','Développez votre activité pour augmenter votre trésorerie.');return;}G.tresorerie-=invest;G.acqOwned.push(id);const p=ACQ.find(x=>x.id===id);G.ca+=p.ca;const fa=G.apts.find(a=>a.locked);if(fa){fa.locked=false;fa.status='ok';fa.note=p.note;fa.ca=p.ca;fa.name=p.name;}updateTopbar();renderSidebar();toast('🔑 Acquisition réussie !',`${p.name} rejoint votre portefeuille. +${p.ca}€/mois.`);renderAcqView();}
 
 function renderMain(){if(G.si>=G.scenarios.length){renderEnd();return;}const s=G.scenarios[G.si];const aa=G.apts.filter(a=>!a.locked).length;const to=Math.round(62+G.rep*0.25+G.satis*0.1);const fact=FACTS[(G.month-1)%FACTS.length];const hint=s.ch?s.ch[P.city]:null;
-// City event for this month
-const cityProf = CITY_PROFILES[P.city];
-const cityEvent = cityProf && cityProf.events && cityProf.events[G.month] ? cityProf.events[G.month] : null;
-// Apply event boost once per month (first scenario of month)
-if(cityEvent && (G.si % 5 === 0)) {
-  G.ca = Math.round(G.ca * (1 + cityEvent.boost/200));
-}
 let html=`<div class="turn-bar"><div><div class="turn-num">${MONTHS[G.month-1]} — Mois ${G.month}</div><div class="turn-sub">${P.agency} · ${P.cityIcon} ${P.city} · Défi ${((G.si%5)+1)}/5 ce mois</div></div><div class="turn-prog"><div class="tpl"><span class="tplt">Progression annuelle</span><span class="tplt">${G.si+1}/${G.scenarios.length}</span></div><div class="ptrack"><div class="pfill fg" style="width:${Math.round(G.si/G.scenarios.length*100)}%"></div></div></div></div>`;
-if(cityEvent && (G.si % 5 === 0)){
-  html+=`<div style="background:linear-gradient(135deg,rgba(212,168,67,0.15),rgba(0,0,0,0));border:1px solid var(--accent);border-radius:var(--r2);padding:12px 16px;margin-bottom:1rem;display:flex;align-items:flex-start;gap:10px">
-    <div style="font-size:20px;flex-shrink:0">🎉</div>
-    <div>
-      <div style="font-size:12px;font-weight:600;color:var(--accent2);margin-bottom:3px;text-transform:uppercase;letter-spacing:0.08em">${P.cityIcon} Événement ${P.city} — ${MONTHS[G.month-1]}</div>
-      <div style="font-size:13px;color:var(--cream2);font-weight:600">${cityEvent.name} <span style="color:var(--green)">+${cityEvent.boost}% sur vos revenus</span></div>
-      <div style="font-size:12px;color:var(--cream3);margin-top:3px">${cityEvent.desc}</div>
-    </div>
-  </div>`;
-}
 if(G.levelup){html+=`<div class="levelup"><div class="lut">🔑 Nouveau bien débloqué !</div><div class="lud">Votre conciergerie franchit un cap ! Consultez l'onglet <strong>Mes Appartements</strong> pour voir votre parc.</div></div>`;G.levelup=false;}
 html+=`<div class="fact-card"><div class="fact-icon">${fact.icon}</div><div><div class="fact-title">${fact.title}</div><div class="fact-text">${fact.text}</div></div></div>`;
 html+=`<div class="dash-grid"><div class="dash-card hl"><div class="dcl">CA mensuel</div><div class="dcv" style="color:var(--accent)">${G.ca.toLocaleString()}€</div><div class="dcd du">récurrent</div></div><div class="dash-card"><div class="dcl">Trésorerie</div><div class="dcv">${G.tresorerie.toLocaleString()}€</div><div class="dcd ${G.tresorerie>5000?'du':'dd'}">${G.tresorerie>5000?'Solide':'Attention'}</div></div><div class="dash-card"><div class="dcl">Appartements</div><div class="dcv">${aa}</div><div class="dcd dn">sur 10 max</div></div><div class="dash-card"><div class="dcl">Occupation</div><div class="dcv">${clamp(to,0,100)}%</div><div class="dcd ${to>75?'du':to>60?'dn':'dd'}">${to>75?'Excellent':to>60?'Correct':'Faible'}</div></div><div class="dash-card"><div class="dcl">QVT Équipe</div><div class="dcv">${clamp(G.qvt,0,100)}<span style="font-size:11px;color:var(--cream3)">/100</span></div><div class="dcd ${G.qvt>70?'du':G.qvt>50?'dn':'dd'}">${G.qvt>70?'Épanouie':G.qvt>50?'Correcte':'À risque'}</div></div><div class="dash-card"><div class="dcl">Satisfaction</div><div class="dcv">${clamp(G.satis,0,100)}<span style="font-size:11px;color:var(--cream3)">/100</span></div><div class="dcd ${G.satis>75?'du':G.satis>55?'dn':'dd'}">${G.satis>75?'Fidélisé':G.satis>55?'Satisfait':'Instable'}</div></div></div>`;
@@ -974,11 +724,11 @@ const choiceOrder = [0,1,2];
 for(let i=choiceOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[choiceOrder[i],choiceOrder[j]]=[choiceOrder[j],choiceOrder[i]];}
 G.currentChoiceOrder = choiceOrder;
 html+=`<div class="glossary">
-  <div class="gl-item"><strong>CA</strong> = Chiffre d'Affaires mensuel</div>
-  <div class="gl-item"><strong>TO</strong> = Taux d'Occupation</div>
-  <div class="gl-item"><strong>QVT</strong> = Qualité de Vie au Travail</div>
-  <div class="gl-item"><strong>Rép.</strong> = Réputation (0–100)</div>
-  <div class="gl-item"><strong>Sat.</strong> = Satisfaction voyageurs (0–100)</div>
+<div class="gl-item"><strong>CA</strong> = Chiffre d'Affaires mensuel</div>
+<div class="gl-item"><strong>TO</strong> = Taux d'Occupation</div>
+<div class="gl-item"><strong>QVT</strong> = Qualité de Vie au Travail</div>
+<div class="gl-item"><strong>Rép.</strong> = Réputation (0–100)</div>
+<div class="gl-item"><strong>Sat.</strong> = Satisfaction voyageurs (0–100)</div>
 </div>`;
 html+=`<div class="choices" id="czone">${choiceOrder.map((origIdx,displayIdx)=>`<button class="cbtn" data-orig="${origIdx}" onclick="choose(${origIdx})"><span class="cltr">${['A','B','C'][displayIdx]}</span><span>${s.choices[origIdx].t}</span></button>`).join('')}</div><div id="fbzone"></div></div>`;
 document.getElementById('tab-play').innerHTML=html;document.querySelector('.main-content').scrollTop=0;}
@@ -987,107 +737,10 @@ function choose(idx){const s=G.scenarios[G.si];const c=s.choices[idx];G.rep=clam
 
 function nextTurn(){G.si++;if(G.si>0&&G.si%5===0)G.month++;if(G.month>12||G.si>=G.scenarios.length){renderEnd();return;}renderMain();updateTopbar();}
 
-function renderEnd(){
-  const sc=Math.round((clamp(G.rep,0,100)+clamp(G.qvt,0,100)+clamp(G.satis,0,100))/3);
-  const aa=G.apts.filter(a=>!a.locked).length;
-  const to=Math.round(62+G.rep*0.25+G.satis*0.1);
-  const goods=G.history.filter(h=>h.outcome==='good').length;
-  const bads=G.history.filter(h=>h.outcome==='bad').length;
-
-  // ── Calcul des Clés d'Or gagnées ──
-  let keysEarned = 0;
-  if(sc >= 20) keysEarned = 1;
-  if(sc >= 40) keysEarned = 2;
-  if(sc >= 60) keysEarned = 3;
-  if(sc >= 75) keysEarned = 4;
-  if(sc >= 88) keysEarned = 5;
-
-  // ── Titres et messages par niveau ──
-  const LEVELS = [
-    {keys:0, title:'Apprenti Conciergier', color:'var(--red)',       emoji:'📋', msg:`Première expérience à ${P.city}. La gestion d'une conciergerie demande de la pratique. Rejouez — les scénarios changeront !`},
-    {keys:1, title:'Conciergier Débutant 🔑', color:'var(--red)',    emoji:'🔑', msg:`Vous maîtrisez les bases. Quelques décisions critiques ont fragilisé votre activité à ${P.city}. Continuez à pratiquer !`},
-    {keys:2, title:'Conciergier Confirmé 🔑🔑', color:'var(--amber)', emoji:'🔑', msg:`Bonne maîtrise des fondamentaux. Vous gérez correctement ${P.agency} mais des marges de progression existent.`},
-    {keys:3, title:'Gestionnaire Expert 🔑🔑🔑', color:'var(--blue)',  emoji:'🔑', msg:`Très bonne gestion de ${P.agency} à ${P.city}. Vous prenez de bonnes décisions dans la majorité des situations.`},
-    {keys:4, title:'Manager Senior 🔑🔑🔑🔑', color:'var(--green)',   emoji:'🔑', msg:`Excellente gestion. Vous dominez les aspects financiers, RH et qualité. Quelques décisions vous séparent encore de la perfection.`},
-    {keys:5, title:'Maître Conciergier — 5 Clés d'Or 🏆', color:'var(--accent2)', emoji:'🏆', msg:`${P.name}, vous avez atteint le niveau ultime de la gestion de conciergerie. Votre maîtrise de ${P.agency} à ${P.city} est exemplaire sur tous les axes.`},
-  ];
-  const level = LEVELS[keysEarned];
-
-  let adv=[];
-  if(G.rep<60)adv.push('Réputation : répondez aux avis sous 2h et lancez une relance automatisée post-séjour');
-  if(G.qvt<60)adv.push('QVT critique : plannings fixes, primes variables et réunion mensuelle d'équipe');
-  if(G.satis<60)adv.push('Satisfaction : checklist photo 47 points + welcome book digital en priorité');
-  if(G.tresorerie<3000)adv.push('Trésorerie fragile : constituez 3 mois de charges avant tout investissement');
-  if(aa<6)adv.push('Croissance : 2 nouveaux propriétaires pour atteindre le seuil de rentabilité optimal');
-  if(adv.length===0)adv.push(`Excellent équilibre à ${P.city} ! Prochaine étape : structurez pour passer à 10 apparts+`);
-
-  showScreen('end');
-
-  // ── HTML de fin ──
-  let endHtml = `<div class="end-wrap">
-    <div class="end-player">${P.avatar} ${P.name} · ${P.agency} · ${P.cityIcon} ${P.city}</div>`;
-
-  // Bannière 5 Clés d'Or (réservée au niveau max)
-  if(keysEarned === 5){
-    endHtml += `<div class="champion-banner">
-      <span class="champion-icon">🏆</span>
-      <div class="champion-title">5 Clés d'Or</div>
-      <div style="font-size:20px;margin:8px 0">🔑🔑🔑🔑🔑</div>
-      <div class="champion-subtitle">${P.name}, vous avez décroché la plus haute distinction de Clés d'Or.<br>Votre gestion de <strong>${P.agency}</strong> à <strong>${P.city}</strong> est exemplaire sur tous les axes.<br>Vous êtes prêt à gérer une conciergerie de niveau professionnel.</div>
-    </div>`;
-  } else {
-    // Écran de fin standard avec score
-    endHtml += `<div class="end-ring"><div class="end-sn">${sc}</div><div class="end-ss">/ 100</div></div>`;
-  }
-
-  // Affichage des clés gagnées
-  endHtml += `<div class="keys-title" style="color:${level.color}">${level.title}</div>`;
-  endHtml += `<div class="keys-display">`;
-  for(let i=1;i<=5;i++){
-    endHtml += `<div class="key-icon${i<=keysEarned?' earned':''}" style="animation-delay:${(i-1)*0.15}s">🔑</div>`;
-  }
-  endHtml += `</div>`;
-  endHtml += `<p class="end-sub">${level.msg}</p>`;
-
-  // KPIs
-  endHtml += `<div class="end-kpis">
-    <div class="end-kpi"><div class="end-kv">${clamp(G.rep,0,100)}</div><div class="end-kl">Réputation</div></div>
-    <div class="end-kpi"><div class="end-kv">${G.ca.toLocaleString()}€</div><div class="end-kl">CA mensuel</div></div>
-    <div class="end-kpi"><div class="end-kv">${clamp(G.qvt,0,100)}</div><div class="end-kl">QVT équipe</div></div>
-    <div class="end-kpi"><div class="end-kv">${clamp(G.satis,0,100)}</div><div class="end-kl">Satisfaction</div></div>
-    <div class="end-kpi"><div class="end-kv">${aa}</div><div class="end-kl">Apparts</div></div>
-    <div class="end-kpi"><div class="end-kv">${clamp(to,0,100)}%</div><div class="end-kl">Taux occup.</div></div>
-  </div>`;
-
-  // Décisions
-  endHtml += `<div class="end-kpis" style="grid-template-columns:repeat(3,1fr)">
-    <div class="end-kpi"><div class="end-kv" style="color:var(--green)">${goods}</div><div class="end-kl">Bonnes décisions</div></div>
-    <div class="end-kpi"><div class="end-kv" style="color:var(--amber)">${G.history.length-goods-bads}</div><div class="end-kl">Correctes</div></div>
-    <div class="end-kpi"><div class="end-kv" style="color:var(--red)">${bads}</div><div class="end-kl">Risquées</div></div>
-  </div>`;
-
-  // Axes de progrès
-  if(keysEarned < 5){
-    endHtml += `<div class="end-advice">
-      <div class="eat">Vos axes de progrès pour décrocher les 5 Clés d'Or</div>
-      ${adv.map(a=>`<div class="eai">${a}</div>`).join('')}
-    </div>`;
-  }
-
-  // CTA Avis par mail
-  endHtml += `<div class="serious-cta">
-    <div class="serious-cta-title">💬 Donnez votre avis sur le jeu</div>
-    <div class="serious-cta-sub">Vous avez aimé ? Vous avez des suggestions ? Votre retour nous aide à améliorer Clés d'Or.</div>
-    <button class="share-btn" onclick="window.location.href='mailto:contact@cles-dor.fr?subject=Mon avis sur Clés d\'Or&body=Bonjour,%0D%0A%0D%0AJ\'ai joué à Clés d\'Or et voici mon retour :%0D%0A%0D%0ACe que j\'ai aimé :%0D%0A%0D%0ACe que je changerais :%0D%0A%0D%0AMon score : ${sc}/100 — ${keysEarned} Clé(s) d\'Or%0D%0A%0D%0AMerci !'">✉️ Envoyer mon avis par mail</button>
-  </div>`;
-    // Bouton rejouer
-  endHtml += `<button class="btn-re" onclick="showScreen('theme')">↩ Nouvelle partie (nouveaux scénarios)</button>`;
-  endHtml += `</div>`;
-
-  document.getElementById('screen-end').innerHTML = endHtml;
-}
+function renderEnd(){const sc=Math.round((clamp(G.rep,0,100)+clamp(G.qvt,0,100)+clamp(G.satis,0,100))/3);const aa=G.apts.filter(a=>!a.locked).length;const to=Math.round(62+G.rep*0.25+G.satis*0.1);let grade,gc,gd;if(sc>=80){grade='Conciergerie 5 Clés d\'Or';gc='var(--accent2)';gd=`${P.name}, vous avez géré ${P.agency} à ${P.city} avec excellence !`;}else if(sc>=65){grade='Gestionnaire Confirmé(e)';gc='var(--green)';gd=`Bonne gestion globale à ${P.city}. Les bases sont solides.`;}else if(sc>=50){grade='En Progression';gc='var(--amber)';gd=`Des bases correctes pour ${P.agency} mais des décisions ont fragilisé vos KPIs. Rejouez — les questions seront différentes !`;}else{grade='À Consolider';gc='var(--red)';gd=`La gestion à ${P.city} est un équilibre délicat. Rejouez — les scénarios changeront !`;}const goods=G.history.filter(h=>h.outcome==='good').length;const bads=G.history.filter(h=>h.outcome==='bad').length;let adv=[];if(G.rep<60)adv.push('Réputation : répondez aux avis sous 2h et lancez une relance automatisée post-séjour');if(G.qvt<60)adv.push('QVT critique : plannings fixes, primes variables et réunion mensuelle d\'équipe');if(G.satis<60)adv.push('Satisfaction : checklist photo 47 points + welcome book digital en priorité');if(G.tresorerie<3000)adv.push('Trésorerie fragile : constituez 3 mois de charges avant tout investissement');if(aa<6)adv.push('Croissance : 2 nouveaux propriétaires pour atteindre le seuil de rentabilité optimal');if(adv.length===0)adv.push(`Excellent équilibre à ${P.city} ! Prochaine étape : structurez pour passer à 10 apparts+`);showScreen('end');document.getElementById('screen-end').innerHTML=`<div class="end-wrap"><div class="end-player">${P.avatar} ${P.name} · ${P.agency} · ${P.cityIcon} ${P.city}</div><div class="end-ring"><div class="end-sn">${sc}</div><div class="end-ss">/ 100</div></div><div class="end-title" style="color:${gc}">${grade}</div><p class="end-sub">${gd}</p><div class="end-kpis"><div class="end-kpi"><div class="end-kv">${clamp(G.rep,0,100)}</div><div class="end-kl">Réputation</div></div><div class="end-kpi"><div class="end-kv">${G.ca.toLocaleString()}€</div><div class="end-kl">CA mensuel</div></div><div class="end-kpi"><div class="end-kv">${clamp(G.qvt,0,100)}</div><div class="end-kl">QVT équipe</div></div><div class="end-kpi"><div class="end-kv">${clamp(G.satis,0,100)}</div><div class="end-kl">Satisfaction</div></div><div class="end-kpi"><div class="end-kv">${aa}</div><div class="end-kl">Apparts</div></div><div class="end-kpi"><div class="end-kv">${clamp(to,0,100)}%</div><div class="end-kl">Taux occup.</div></div></div><div class="end-kpis" style="grid-template-columns:repeat(3,1fr)"><div class="end-kpi"><div class="end-kv" style="color:var(--green)">${goods}</div><div class="end-kl">Bonnes décisions</div></div><div class="end-kpi"><div class="end-kv" style="color:var(--amber)">${G.history.length-goods-bads}</div><div class="end-kl">Correctes</div></div><div class="end-kpi"><div class="end-kv" style="color:var(--red)">${bads}</div><div class="end-kl">Risquées</div></div></div><div class="end-advice"><div class="eat">Vos axes de progrès — ${P.city}</div>${adv.map(a=>`<div class="eai">${a}</div>`).join('')}</div><button class="btn-re" onclick="showScreen('theme')">↩ Nouvelle partie (nouveaux scénarios)</button></div>`;}
 
 function startGame(){P.name=document.getElementById('inp-name').value.trim()||'Joueur';P.agency=document.getElementById('inp-agency').value.trim()||'Ma Conciergerie';initState();showScreen('game');currentTab='play';document.querySelectorAll('.nav-tab').forEach((t,i)=>t.classList.toggle('active',i===0));document.getElementById('tab-play').style.display='block';document.getElementById('tab-apts').classList.remove('visible');document.getElementById('tab-acq').classList.remove('visible');updateTopbar();renderSidebar();renderMain();toast('Bienvenue, '+P.name+' !',P.agency+' ouvre ses portes à '+P.city+' ! Bonne chance 🔑');}
 </script>
+
 </body>
 </html>
